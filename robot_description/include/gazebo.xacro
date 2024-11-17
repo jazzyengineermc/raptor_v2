@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<robot>
+<gazebo>
+  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <alwaysOn>true</alwaysOn>
+    <legacyMode>false</legacyMode>
+    <updateRate>20</updateRate>
+    <robotNamespace>/</robotNamespace>
+    <leftJoint>base_to_lwheel</leftJoint>
+    <rightJoint>base_to_rwheel</rightJoint>
+    <wheelSeparation>0.34</wheelSeparation>
+    <wheelDiameter>0.28</wheelDiameter>
+    <torque>0.1</torque>
+    <commandTopic>cmd_vel</commandTopic>
+    <odometryTopic>odom_diffdrive</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <odometrySource>world</odometrySource>
+    <publishTf>1</publishTf>
+    <publishOdomTF>true</publishOdomTF>
+    <rosDebugLevel>na</rosDebugLevel>
+    <wheelAcceleration>20</wheelAcceleration>
+    <wheelTorque>200</wheelTorque>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <publishWheelTF>true</publishWheelTF>
+    <publishWheelJointState>true</publishWheelJointState>
+  </plugin>
+</gazebo>
+<gazebo reference="laser">
+  <sensor type="ray" name="head_hokuyo_sensor">
+    <pose>0 0 0 0 0 0</pose>
+    <visualize>false</visualize>
+    <update_rate>10</update_rate>
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>720</samples>
+          <resolution>1</resolution>
+          <min_angle>-3.14</min_angle>
+          <max_angle>3.14</max_angle>
+        </horizontal>
+      </scan>
+      <range>
+        <min>0.10</min>
+        <max>10.0</max>
+        <resolution>0.01</resolution>
+      </range>
+      <noise>
+        <type>gaussian</type>
+        <mean>0.0</mean>
+        <stddev>0.01</stddev>
+      </noise>
+    </ray>
+    <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
+      <topicName>/scan</topicName>
+      <frameName>laser</frameName>
+    </plugin>
+  </sensor>
+</gazebo>
+<gazebo reference="chassis_frame">
+  <visual name="caster_front_visual">
+    <material>
+      <script>
+        <uri>file://media/materials/scripts/gazebo.material</uri>
+        <name>Gazebo/Red</name>
+      </script>
+    </material>
+  </visual>
+  <mu1>0.001</mu1>
+  <mu2>0.001</mu2>
+</gazebo>
+<gazebo reference="lwheel">
+  <material>Gazebo/Black</material>
+</gazebo>
+<gazebo reference="rwheel">
+  <material>Gazebo/Black</material>
+</gazebo>
+<gazebo reference="caster_wheel">
+  <material>Gazebo/Black</material>
+  <mu1>0.001</mu1>
+  <mu2>0.001</mu2>
+  <slip1>1.0</slip1>
+  <slip2>1.0</slip2>
+</gazebo>
+<gazebo reference="bucket">
+  <material>Gazebo/Blue</material>
+</gazebo>
+<gazebo reference="head">
+  <material>Gazebo/Yellow</material>
+</gazebo>
+<gazebo reference="pvc_horizontal">
+  <material>Gazebo/Yellow</material>
+</gazebo>
+<gazebo reference="pvc_up_left">
+  <material>Gazebo/Yellow</material>
+</gazebo>
+<gazebo reference="pvc_up_right">
+  <material>Gazebo/Yellow</material>
+</gazebo>
+<gazebo reference="pvc_45_left">
+  <material>Gazebo/Yellow</material>
+</gazebo>
+<gazebo reference="pvc_45_right">
+  <material>Gazebo/Yellow</material>
+</gazebo>
+</robot>
