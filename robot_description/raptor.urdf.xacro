@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 	<robot name="raptor" xmlns:xacro="http://www.ros.org/wiki/xacro">
-	<xacro:include filename="$(find raptor_description)/urdf/include/material.xacro"/>
-	<xacro:include filename="$(find raptor_description)/urdf/include/gazebo.xacro"/>
-	<xacro:include filename="$(find raptor_description)/urdf/include/_d435i.urdf.xacro"/>
+	<xacro:include filename="$(find raptor_v2)/robot_description/include/material.xacro"/>
+	<xacro:include filename="$(find raptor_v2)/robot_description/include/gazebo.xacro"/>
+	<xacro:include filename="$(find raptor_v2)/robot_description/include/_d435i.urdf.xacro"/>
 
   		<link name="base_link">
 		</link>

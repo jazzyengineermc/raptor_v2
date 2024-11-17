@@ -81,25 +81,4 @@
   <slip1>1.0</slip1>
   <slip2>1.0</slip2>
 </gazebo>
-<gazebo reference="bucket">
-  <material>Gazebo/Blue</material>
-</gazebo>
-<gazebo reference="head">
-  <material>Gazebo/Yellow</material>
-</gazebo>
-<gazebo reference="pvc_horizontal">
-  <material>Gazebo/Yellow</material>
-</gazebo>
-<gazebo reference="pvc_up_left">
-  <material>Gazebo/Yellow</material>
-</gazebo>
-<gazebo reference="pvc_up_right">
-  <material>Gazebo/Yellow</material>
-</gazebo>
-<gazebo reference="pvc_45_left">
-  <material>Gazebo/Yellow</material>
-</gazebo>
-<gazebo reference="pvc_45_right">
-  <material>Gazebo/Yellow</material>
-</gazebo>
 </robot>

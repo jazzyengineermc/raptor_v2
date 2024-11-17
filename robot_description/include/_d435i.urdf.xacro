@@ -8,7 +8,7 @@ aluminum peripherial evaluation case.
 -->
 
 <robot name="sensor_d435i" xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:include filename="$(find raptor_description)/urdf/include/_d435.urdf.xacro"/>
+  <xacro:include filename="$(find raptor_v2)/robot_description/include/_d435.urdf.xacro"/>
   <xacro:include filename="$(find realsense2_description)/urdf/_d435i_imu_modules.urdf.xacro"/>
 
   <xacro:macro name="sensor_d435i" params="parent name:=camera use_nominal_extrinsics:=false">
